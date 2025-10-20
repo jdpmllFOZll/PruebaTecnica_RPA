@@ -20,10 +20,10 @@ def get_weather(lat, lon, retries=3):
             return response.json()
         except Exception as e:
             if intento < retries - 1:
-                print(f"⚠️ Error en API clima, reintentando... ({intento+1})")
+                print(f"Error en API clima, reintentando... ({intento+1})")
                 continue
             else:
-                print(f"❌ Error definitivo en API clima: {e}")
+                print(f"Error definitivo en API clima: {e}")
                 return None
 
 
@@ -43,14 +43,14 @@ def get_exchange_rate(moneda_destino, retries=3):
                     "base": "USD"
                 }
             else:
-                print(f"⚠️ Moneda {moneda_destino} no encontrada en API")
+                print(f"Moneda {moneda_destino} no encontrada en API")
                 return None
         except Exception as e:
             if intento < retries - 1:
-                print(f"⚠️ Error en API de tipo de cambio, reintentando... ({intento+1})")
+                print(f"Error en API de tipo de cambio, reintentando... ({intento+1})")
                 continue
             else:
-                print(f"❌ Error definitivo en API de tipo de cambio: {e}")
+                print(f"Error definitivo en API de tipo de cambio: {e}")
                 return None
 
 
@@ -71,10 +71,10 @@ def get_timezone(timezone, retries=3):
             }
         except Exception:
             if intento < retries - 1:
-                print(f"⚠️ Error en API de zona horaria, reintentando... ({intento+1})")
+                print(f"Error en API de zona horaria, reintentando... ({intento+1})")
                 continue
             else:
-                print("❌ API de zona horaria no disponible, usando fallback local...")
+                print("API de zona horaria no disponible, usando fallback local...")
                 # --- Fallback con pytz ---
                 try:
                     tz = pytz.timezone(timezone)
@@ -87,5 +87,5 @@ def get_timezone(timezone, retries=3):
                         "fuente": "fallback_local"
                     }
                 except Exception as e:
-                    print(f"❌ Error en fallback de zona horaria: {e}")
+                    print(f"Error en fallback de zona horaria: {e}")
                     return None

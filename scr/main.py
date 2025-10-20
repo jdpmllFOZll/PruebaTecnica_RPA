@@ -80,24 +80,24 @@ def run_pipeline():
         with open("../data/resultados.json", "w", encoding="utf-8") as f:
             json.dump(resultados, f, indent=4, ensure_ascii=False)
 
-        print("✅ Datos guardados para todas las ciudades")
+        print("Datos guardados para todas las ciudades")
         registrar_log("OK", "Datos guardados para todas las ciudades")
 
     except Exception as e:
-        print(f"❌ Error en pipeline: {e}")
+        print(f"Error en pipeline: {e}")
         registrar_log("ERROR", str(e))
 
 if __name__ == "__main__":
     import schedule, time
 
     # --- Ejecución inmediata para pruebas ---
-    print("⏳ Ejecutando recolección de datos inicial...")
+    print("Ejecutando recolección de datos inicial...")
     run_pipeline()
 
     # --- Para pruebas: cada 30 segundos ---
     schedule.every(30).seconds.do(run_pipeline)
 
-    print("🤖 Robot iniciado. Ejecutando cada 30 segundos (modo prueba)...")
+    print("Robot iniciado. Ejecutando cada 30 segundos (modo prueba)...")
     while True:
         schedule.run_pending()
         time.sleep(1)
