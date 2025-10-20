@@ -1,8 +1,8 @@
 README – Prueba Técnica RPA (TravelCorp)
 
-######################################################
+//////////////////////////////////////////////////////
 ARQUITECTURA DE LA SOLUCIÓN
-######################################################
+/////////////////////////////////////////////////////
 
 La solución está compuesta por tres capas principales:
 
@@ -25,9 +25,9 @@ La solución está compuesta por tres capas principales:
     - Logs estructurados en logs.json.
     - Dashboard interactivo en Streamlit + Plotly con mapa, tabla, gráficos y panel de alertas.
 
-######################################################
+//////////////////////////////////////////////////////
 ESTRUCTURA DE CARPETAS
-######################################################
+//////////////////////////////////////////////////////
 
 PruebaTecnica_RPA/
 │
@@ -45,9 +45,9 @@ PruebaTecnica_RPA/
 └── README.md            # Documentación técnica
 
 
-######################################################
+//////////////////////////////////////////////////////
 INSTALACIÓN Y EJECUCIÓN
-######################################################
+//////////////////////////////////////////////////////
 
 - Instalar python 3.9.12 (Aplicación funcional comprobada con esta versión python)
 
@@ -88,9 +88,9 @@ Despues de ejecutada la aplicación revisar los archivos JSON para verificar que
     con toda la informacion de la aplicación.
     
 
-######################################################
+//////////////////////////////////////////////////////
 DASHBOARD
-######################################################
+//////////////////////////////////////////////////////
 
 Incluye:
 - Mapa con las 5 ciudades y su nivel de riesgo (verde/amarillo/naranja/rojo).
@@ -99,9 +99,9 @@ Incluye:
 - Gráfico de barras comparando tipos de cambio.
 - Panel de alertas con alertas activas e histórico de las últimas 24h
 
-######################################################
+//////////////////////////////////////////////////////
 MANEJO DE ERRORES
-######################################################
+//////////////////////////////////////////////////////
 
 - Reintentos automáticos: hasta 3 por API.
 - Fallback horario: si WorldTimeAPI falla, se usa pytz.
@@ -109,9 +109,9 @@ MANEJO DE ERRORES
 - Notificaciones: alertas críticas se muestran en consola y en el dashboard
 
 
-######################################################
+//////////////////////////////////////////////////////
 DIAGRAMA DE FLUJO
-######################################################
+//////////////////////////////////////////////////////
 
 [Scheduler cada 30 min]
         ↓
@@ -130,18 +130,18 @@ DIAGRAMA DE FLUJO
  [dashboard.py → Streamlit]
 
 
-######################################################
+///////////////////////////////////////////////////////
 ESCENARIOS DE PRUEBA
-######################################################
+///////////////////////////////////////////////////////
 
 - API caída → fallback o log de error.
 - Datos incompletos → excepción controlada.
 - Límite de rate → reintentos + log.
 - Formato inesperado → validación de claves antes de procesar.
 
-######################################################
+///////////////////////////////////////////////////////
 LIBRERÍAS REQUERIDAS (requirements.txt)
-######################################################
+//////////////////////////////////////////////////////
 
 requests
 pytz
